@@ -1,5 +1,11 @@
+backend:
+  name: test-repo
+
+media_folder: static/assets
+public_folder: assets
+
 collections:
-  - name: "about-orcas" # Used in routes, e.g., /admin/collections/blog
+  - name: "about-orcas" # Used in routes, e.g., /admin/collections/about-orcas
     label: "About Orcas Page" # Used in the UI
     folder: "/about-orcas" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
