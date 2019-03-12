@@ -3,7 +3,7 @@ import React from "react"
 //make a card that can render a larger, more feature card content for any of the sub-main pages
 const featureCard = props => {
   return (
-    <div class="card">
+    <div class="card" style={{margin: "2rem"}}>
       <div class="card-header">
         <div class="card-header-title">{props.title}</div>
       </div>
