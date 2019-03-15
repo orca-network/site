@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Navbar from '../components/navbar'
-// import Footer from '../components/footer'
+import Footer from '../components/footer.js'
 
 import './all.sass'
 
@@ -37,7 +37,7 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
         <Navbar />
         <div>{children}</div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )}
   />

@@ -1,8 +1,7 @@
 ---
 layout: blog
-templateKey: post
-path: /pods/pods
-title: "Orca Pods"
+templateKey: section-home
+title: "Orca Habitat"
 date: 1999-12-31 11:59:59 -0800
 image: null
 rating: 5
