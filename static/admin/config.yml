@@ -9,7 +9,7 @@ public_folder: assets
 collections:
   - name: "about-orcas" # Used in routes, e.g., /admin/collections/about-orcas
     label: "About Orcas Page" # Used in the UI
-    folder: "src/about-orcas-main" # The path to the folder where the documents are stored
+    folder: "src/pages/about-orcas-main" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -19,7 +19,7 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image"}
   - name: "special-orcas" 
     label: "About Orcas Page / Special Orcas"
-    folder: "src/about-orcas-main/special-orcas" 
+    folder: "src/pages/about-orcas-main/special-orcas" 
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: 
