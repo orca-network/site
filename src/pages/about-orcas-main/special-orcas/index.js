@@ -5,13 +5,13 @@ import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
 
 
-const AboutOrcas = props => {
-  const posts = props.data.podsPosts.edges
-  const featured = props.data.podsFeatured.edges[0].node;
+const SpecialOrcas = props => {
+  const posts = props.data.specialPosts.edges
+  const featured = props.data.specialFeatured.edges[0].node;
 
   return (
     <Layout>
-      <Banner title="Orca Pods" />
+      <Banner title="Special Orcas" />
       <FeatureCard title={featured.frontmatter.title} content={featured.excerpt}/>
       <AccordionList posts={posts} />
     </Layout>
@@ -22,10 +22,10 @@ const AboutOrcas = props => {
 //default is less than 200
 export const query = graphql`
   query PodsQuery {
-    podsFeatured: allMarkdownRemark(
+    specialFeatured: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/featured/"}}
-        fileAbsolutePath: {regex: "/pods/"}
+        fileAbsolutePath: {regex: "/special-orcas/"}
     }
     ){
       edges{
@@ -37,9 +37,9 @@ export const query = graphql`
         }
       }
     }
-    podsPosts: allMarkdownRemark(
+    specialPosts: allMarkdownRemark(
       filter: {frontmatter: {templateKey: {regex: "/post/"}}
-      fileAbsolutePath: {regex: "/pods/"}
+      fileAbsolutePath: {regex: "/special-orcas/"}
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -55,4 +55,4 @@ export const query = graphql`
   }
 `
 
-export default AboutOrcas;
+export default SpecialOrcas;

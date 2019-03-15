@@ -6,14 +6,14 @@ import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
 import "../../../components/h1.scss"
 
-const Habitat = props => {
-  const posts = props.data.habitatPosts.edges;
-  const featured = props.data.habitatFeature.edges[0].node;
+const NaturalHistory = props => {
+  const posts = props.data.historyPosts.edges;
+  const featured = props.data.historyFeature.edges[0].node;
   console.log("alias query", posts, featured)
 
   return (
     <Layout>
-        <Banner title="Natural Habitat"/>
+        <Banner title="Natural History"/>
         <FeatureCard title={featured.frontmatter.title} content={featured.excerpt}/>
           <AccordionList posts={posts} />
     </Layout>
@@ -21,11 +21,11 @@ const Habitat = props => {
 }
 
 export const query = graphql`
-  query HabitatQuery {
-    habitatFeature: allMarkdownRemark(
+  query HistoryQuery {
+    historyFeature: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/featured/"}}
-        fileAbsolutePath: {regex: "/habitat/"}
+        fileAbsolutePath: {regex: "/natural-history/"}
     }
     ){
       edges{
@@ -37,10 +37,10 @@ export const query = graphql`
         }
       }
     }
-    habitatPosts: allMarkdownRemark(
+    historyPosts: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/post/"}}
-        fileAbsolutePath: {regex: "/habitat/"}
+        fileAbsolutePath: {regex: "/natural-history/"}
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -57,4 +57,4 @@ export const query = graphql`
   }
 `
 
-export default Habitat
+export default NaturalHistory

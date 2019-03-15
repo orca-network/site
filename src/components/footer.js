@@ -6,7 +6,7 @@ import facebook from "../images/facebook.svg"
 import instagram from "../images/instagram.svg"
 import twitter from "../images/twitter.svg"
 
-const Footer = class extends React.Component {
+class Footer extends React.Component {
   render() {
     return (
       <footer className="footer has-background-primary has-text-white-ter">

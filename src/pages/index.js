@@ -10,18 +10,23 @@ export default class index extends Component {
           {/* <h1 className="title has-text-weight-bold is-size-2 has-text-centered">
           The Orca Network
         </h1>{" "} */}
-        <figure class="image">
+        <section class="section has-background-primary" >
+        <figure class="image" style={{margin: "0px 2em", height:"450px", overflow: "hidden", border: "4px solid white"}}>
           <img src={coverImage}/>
         </figure>
+        </section>
  
 
           <section class="hero is-primary" >
             <div class="hero-body">
-              <div class="container">
+              <div class="container has-text-centered">
                   <h1 class="title">The Orca Network</h1>
                 <h2 class="subtitle">Non profit for whale and orca research in the pacific northwest.</h2>
               </div>
             </div>
+          </section>
+          <section class="section has-text-centered">
+          <a class="button is-warning is-normal is-rounded">Support Orca Network</a>
           </section>
         </>
       </Layout>
