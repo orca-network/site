@@ -7,14 +7,14 @@ module.exports = {
     plugins: [
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-sass',
-    //   {
-    //     // keep as first gatsby-source-filesystem plugin for gatsby image support
-    //     resolve: 'gatsby-source-filesystem',
-    //     options: {
-    //       path: `${__dirname}/static/img`,
-    //       name: 'uploads',
-    //     },
-    //   },
+      {
+        // keep as first gatsby-source-filesystem plugin for gatsby image support
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: `${__dirname}/static/assets`,
+          name: 'uploads',
+        },
+      },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
@@ -61,6 +61,9 @@ module.exports = {
       },
       {
         resolve: 'gatsby-plugin-netlify-cms',
+        options: {
+          modulePath: `${__dirname}/src/cms/cms.js`,
+        },
       },
     //   {
     //     resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
