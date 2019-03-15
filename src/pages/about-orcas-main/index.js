@@ -16,6 +16,7 @@ const menuItems = [
   { title: "Resources", path: "/about-orcas-main/resources" },
 ]
 
+
 const AboutOrcaMain = props => {
   const query = props.data.allMarkdownRemark.edges[0].node
   return (
