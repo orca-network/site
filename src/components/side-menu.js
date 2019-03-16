@@ -1,19 +1,27 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-const sideMenu = (props) => {
+class SideMenu extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      link: []
+    }
+  }
+  render(){
+  //  console.log('path', props.prefix.concat(props.menuItems[0].node.frontmatter.title.toLowerCase().replace(' ', '-')) );
   return (
    
       <aside class="menu" style={{margin: '2rem'}}>
-        <h2 class="menu-label">All About Oras</h2>
+        <h2 class="menu-label">{this.props.title}</h2>
         <ul class="menu-list">
 
-        {props.menuItems.map(item => {
+        {this.props.menuItems.map(item => {
         
         return(
             <li>
-            <Link to={item.path} class="navbar-item">
-              {item.title}
+            <Link to={this.props.prefix.concat(item.node.frontmatter.title.toLowerCase().replace(' ', '-'))} class="navbar-item">
+              {item.node.frontmatter.title}
             </Link>
           </li>    
         )
@@ -22,5 +30,6 @@ const sideMenu = (props) => {
       </aside>
   )
 }
+}
 
-export default sideMenu;
+export default SideMenu;

@@ -5,7 +5,7 @@ import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
 
 
-const SpecialOrcas = props => {
+const WaysWhales = props => {
   const posts = props.data.specialPosts.edges
   const featured = props.data.specialFeatured.edges[0].node;
 
@@ -21,8 +21,8 @@ const SpecialOrcas = props => {
 //prune length provides maximum number of characters to collect
 //default is less than 200
 export const query = graphql`
-  query PodsQuery {
-    specialFeatured: allMarkdownRemark(
+  query WaysQuery {
+    waysFeatured: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/featured/"}}
         fileAbsolutePath: {regex: "/special-orcas/"}
@@ -38,7 +38,7 @@ export const query = graphql`
         }
       }
     }
-    specialPosts: allMarkdownRemark(
+    waysPosts: allMarkdownRemark(
       filter: {frontmatter: {templateKey: {regex: "/post/"}}
       fileAbsolutePath: {regex: "/special-orcas/"}
       }
@@ -57,4 +57,4 @@ export const query = graphql`
   }
 `
 
-export default SpecialOrcas;
+export default WaysWhales;

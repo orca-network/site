@@ -3,7 +3,7 @@ layout: blog
 templateKey: post
 title: "J2 Granny"
 date: 1999-12-31 11:59:59 -0800
-image: null
+image: /assets/profile-distance.jpg
 rating: 5
 ---
 

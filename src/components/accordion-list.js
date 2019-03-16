@@ -22,7 +22,7 @@ const AccordionList = props => {
           const {
             node: {
               excerpt,
-              frontmatter: { path, title },
+              frontmatter: { path, title, image },
             },
           } = edge
           return (
@@ -35,7 +35,7 @@ const AccordionList = props => {
               </AccordionItemTitle>
               <AccordionItemBody>
                 <div class="container">
-                  <img src="https://via.placeholder.com/150" />
+                  <img src={image} style={{width: "200px"}}/>
                   {excerpt}
                 </div>
               </AccordionItemBody>

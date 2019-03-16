@@ -7,12 +7,14 @@ const featureCard = props => {
       <div class="card-header">
         <div class="card-header-title">{props.title}</div>
       </div>
-      <div class="card-image">
+      <div class="columns">
+      <div class="card-image column is-one-third">
         <figure class="image" style={{ margin: "1rem" }}>
-          <img src={props.image} />
+          <img src={props.image} style={{width: "300px"}}/>
         </figure>
       </div>
       <div class="card-content">{props.content}</div>
+      </div>
     </div>
   )
 }

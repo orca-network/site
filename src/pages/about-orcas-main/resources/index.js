@@ -1,31 +1,31 @@
 import React from "react"
+
 import Layout from "../../../components/layout"
 import AccordionList from "../../../components/accordion-list.js"
 import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
+import "../../../components/h1.scss"
 
-
-const SpecialOrcas = props => {
-  const posts = props.data.specialPosts.edges
-  const featured = props.data.specialFeatured.edges[0].node;
+const Resource = props => {
+  const posts = props.data.resourcePosts.edges;
+  const featured = props.data.resourceFeature.edges[0].node;
+  console.log("alias query", posts, featured)
 
   return (
     <Layout>
-      <Banner title="Special Orcas" />
-      <FeatureCard title={featured.frontmatter.title} content={featured.excerpt} image={featured.frontmatter.image}/>
-      <AccordionList posts={posts} />
+        <Banner title="Natural Resource"/>
+        <FeatureCard title={featured.frontmatter.title} content={featured.excerpt}/>
+          <AccordionList posts={posts} />
     </Layout>
   )
 }
 
-//prune length provides maximum number of characters to collect
-//default is less than 200
 export const query = graphql`
-  query PodsQuery {
-    specialFeatured: allMarkdownRemark(
+  query ResourceQuery {
+    resourceFeature: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/featured/"}}
-        fileAbsolutePath: {regex: "/special-orcas/"}
+        fileAbsolutePath: {regex: "/resource/"}
     }
     ){
       edges{
@@ -33,14 +33,14 @@ export const query = graphql`
           excerpt(pruneLength: 400)
           frontmatter{
             title
-            image
           }
         }
       }
     }
-    specialPosts: allMarkdownRemark(
-      filter: {frontmatter: {templateKey: {regex: "/post/"}}
-      fileAbsolutePath: {regex: "/special-orcas/"}
+    resourcePosts: allMarkdownRemark(
+      filter: {
+        frontmatter: {templateKey: {regex: "/post/"}}
+        fileAbsolutePath: {regex: "/resource/"}
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -49,12 +49,12 @@ export const query = graphql`
           excerpt(pruneLength: 350)
           frontmatter {
             title
-            image
           }
         }
       }
     }
+
   }
 `
 
-export default SpecialOrcas;
+export default Resource
