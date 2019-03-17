@@ -76,7 +76,7 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className="content has-background-white has-text-centered">
-          <img src="assets/network-logo.png" alt="Orca Network" style={{ width: "2.5em" }} />
+          <img src="/assets/network-logo.png" alt="Orca Network" style={{ width: "2.5em" }} />
           <div class="has-text-primary"> {"\u00A9"} Orca Network 2019</div>
         </div>
       </footer>
