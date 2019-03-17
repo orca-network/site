@@ -17,15 +17,67 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "image", widget: "image"}
-  - name: "special-orcas" 
-    label: "About Orcas Page / Special Orcas"
-    folder: "src/pages/about-orcas-main/special-orcas" 
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "habitat" 
+    label: "About Orcas Page / Habitat"
+    folder: "src/pages/about-orcas-main/habitat" 
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{title}}"
     fields: 
       - {label: "templateKey", name: "templateKey", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "natural-history" 
+    label: "About Orcas Page / Natural History"
+    folder: "src/pages/about-orcas-main/natural-history" 
+    create: true
+    slug: "{{title}}"
+    fields: 
+      - {label: "templateKey", name: "templateKey", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "special-orcas" 
+    label: "About Orcas Page / Special Orcas"
+    folder: "src/pages/about-orcas-main/special-orcas" 
+    create: true
+    slug: "{{title}}"
+    fields: 
+      - {label: "templateKey", name: "templateKey", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "ways-whales" 
+    label: "About Orcas Page / Ways of Whales"
+    folder: "src/pages/about-orcas-main/ways-whales" 
+    create: true
+    slug: "{{title}}"
+    fields: 
+      - {label: "templateKey", name: "templateKey", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
+  - name: "resources" 
+    label: "About Orcas Page / Resources"
+    folder: "src/pages/about-orcas-main/resources" 
+    create: true
+    slug: "{{title}}"
+    fields: 
+      - {label: "templateKey", name: "templateKey", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+
 

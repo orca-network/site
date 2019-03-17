@@ -3,21 +3,26 @@ import Layout from "../../components/layout.js"
 import Banner from "../../components/banner.js"
 import SideMenu from "../../components/side-menu.js"
 import FeatureCard from "../../components/feature-card.js"
-import {menuFrontmatterFragment} from "../../components/fragments.js"
+
 const aboutImage =
   "https://static.wixstatic.com/media/760f65_3113669cb3064cdf9acd16f41934984b~mv2.jpg"
+const menuItems = [
+  { title: "Archives", path: "/sightings/archives" },
+  { title: "Report Sighting", path: "/sightings/archives" },
+  { title: "Viewpoints Map", path: "/sightings/viewpoints-map" },
+  { title: "Whale Watching Trips", path: "/sightings/whale-watch" }
+]
 
-const AboutOrcaMain = props => {
-  const query = props.data.mainContent.edges[0].node
-  const menu = props.data.menu.edges
-  console.log('menu results', menu);
+
+const Sightings = props => {
+  const query = props.data.allMarkdownRemark.edges[0].node
   return (
     <Layout>
       <>
-        <Banner title="About Orcas" />
+        <Banner title="Sightings" />
         <div class="columns">
           <div class="column is-one-quarter">
-            <SideMenu menuItems={menu} prefix="/about-orcas-main/" />
+            {/* <SideMenu  menuItems={menuItems} /> */}
           </div>
           <div class="column">
             <FeatureCard
@@ -33,11 +38,11 @@ const AboutOrcaMain = props => {
 }
 
 export const query = graphql`
-  query AboutQuery {
-    mainContent: allMarkdownRemark(
+  query SightingsQuery {
+    allMarkdownRemark(
       filter: {
         frontmatter: { templateKey: { regex: "/section-home/" } }
-        fileAbsolutePath: { regex: "/about-orca-main/" }
+        fileAbsolutePath: { regex: "/sightings/" }
       }
     ) {
       edges {
@@ -49,14 +54,7 @@ export const query = graphql`
         }
       }
     }
-    menu: allMarkdownRemark(
-      filter:{fileAbsolutePath: {regex: "/about-orcas-main/"}
-        frontmatter: {templateKey: {regex: "/featured/"}}
-      }
-    ){
-      ...menuFrontmatter
-    }
   }
 `
 
-export default AboutOrcaMain
+export default Sightings;
