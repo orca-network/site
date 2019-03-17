@@ -6,12 +6,12 @@ import FeatureCard from "../../../components/feature-card.js"
 
 
 const WaysWhales = props => {
-  const posts = props.data.specialPosts.edges
-  const featured = props.data.specialFeatured.edges[0].node;
+  const posts = props.data.waysPosts.edges
+  const featured = props.data.waysFeatured.edges[0].node;
 
   return (
     <Layout>
-      <Banner title="Special Orcas" />
+      <Banner title="Ways of Whales" />
       <FeatureCard title={featured.frontmatter.title} content={featured.excerpt} image={featured.frontmatter.image}/>
       <AccordionList posts={posts} />
     </Layout>
@@ -25,7 +25,7 @@ export const query = graphql`
     waysFeatured: allMarkdownRemark(
       filter: {
         frontmatter: {templateKey: {regex: "/featured/"}}
-        fileAbsolutePath: {regex: "/special-orcas/"}
+        fileAbsolutePath: {regex: "/ways-of-whales/"}
     }
     ){
       edges{
@@ -40,7 +40,7 @@ export const query = graphql`
     }
     waysPosts: allMarkdownRemark(
       filter: {frontmatter: {templateKey: {regex: "/post/"}}
-      fileAbsolutePath: {regex: "/special-orcas/"}
+      fileAbsolutePath: {regex: "/ways-of-whales/"}
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {

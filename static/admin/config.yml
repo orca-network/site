@@ -55,9 +55,9 @@ collections:
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "ways-whales" 
+  - name: "ways-of-whales" 
     label: "About Orcas Page / Ways of Whales"
-    folder: "src/pages/about-orcas-main/ways-whales" 
+    folder: "src/pages/about-orcas-main/ways-of-whales" 
     create: true
     slug: "{{title}}"
     fields: 
