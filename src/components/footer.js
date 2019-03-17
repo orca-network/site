@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import logo from "../images/network-logo.png"
+// import logo from "assets/network-logo.png"
 import facebook from "../images/facebook.svg"
 import instagram from "../images/instagram.svg"
 import twitter from "../images/twitter.svg"
@@ -76,7 +76,7 @@ class Footer extends React.Component {
           </div>
         </div>
         <div className="content has-background-white has-text-centered">
-          <img src={logo} alt="Orca Network" style={{ width: "2.5em" }} />
+          <img src="assets/network-logo.png" alt="Orca Network" style={{ width: "2.5em" }} />
           <div class="has-text-primary"> {"\u00A9"} Orca Network 2019</div>
         </div>
       </footer>

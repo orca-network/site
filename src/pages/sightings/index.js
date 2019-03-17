@@ -22,7 +22,7 @@ const Sightings = props => {
         <Banner title="Sightings" />
         <div class="columns">
           <div class="column is-one-quarter">
-            <SideMenu  menuItems={menuItems} />
+            {/* <SideMenu  menuItems={menuItems} /> */}
           </div>
           <div class="column">
             <FeatureCard

@@ -3,19 +3,9 @@ import Layout from "../../components/layout.js"
 import Banner from "../../components/banner.js"
 import SideMenu from "../../components/side-menu.js"
 import FeatureCard from "../../components/feature-card.js"
-
+import {menuFrontmatterFragment} from "../../components/fragments.js"
 const aboutImage =
   "https://static.wixstatic.com/media/760f65_3113669cb3064cdf9acd16f41934984b~mv2.jpg"
-// const menuItems = [
-//   { title: "Natural History", path: "/about-orcas-main/natural-history" },
-//   { title: "Special Orcas", path: "/about-orcas-main/special-orcas" },
-//   { title: "Habitat", path: "/about-orcas-main/habitat" },
-//   { title: "Southern Resident Community", path: "/about-orcas-main/so-resident" },
-//   { title: "Biggs & Transient", path: "/about-orcas-main/biggs-transient" },  
-//   { title: "Ways of Whales", path: "/about-orcas-main/ways-whales" },
-//   { title: "Resources", path: "/about-orcas-main/resources" },
-// ]
-
 
 const AboutOrcaMain = props => {
   const query = props.data.mainContent.edges[0].node
@@ -64,14 +54,7 @@ export const query = graphql`
         frontmatter: {templateKey: {regex: "/featured/"}}
       }
     ){
-      edges{
-        node
-        {
-          frontmatter{
-            title
-          }
-        }
-      }
+      ...menuFrontmatter
     }
   }
 `
