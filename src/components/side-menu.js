@@ -20,7 +20,7 @@ class SideMenu extends React.Component{
         
         return(
             <li>
-            <Link to={this.props.prefix.concat(item.node.frontmatter.title.toLowerCase().replace(' ', '-'))} class="navbar-item">
+            <Link to={this.props.prefix.concat(item.node.frontmatter.title.toLowerCase().replace(/\s/g,'-'))} class="navbar-item">
               {item.node.frontmatter.title}
             </Link>
           </li>    
