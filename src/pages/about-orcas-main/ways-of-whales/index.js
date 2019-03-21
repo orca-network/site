@@ -1,19 +1,27 @@
 import React from "react"
 import Layout from "../../../components/layout"
 import AccordionList from "../../../components/accordion-list.js"
-import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
-
+import LeftMenu from "../../../components/pages/left-menu.js"
 
 const WaysWhales = props => {
   const posts = props.data.waysPosts.edges
-  const featured = props.data.waysFeatured.edges[0].node;
+  const featured = props.data.waysFeatured.edges[0].node
+  const menu = props.data.menu.edges
 
   return (
     <Layout>
-      <Banner title="Ways of Whales" />
-      <FeatureCard title={featured.frontmatter.title} content={featured.excerpt} image={featured.frontmatter.image}/>
-      <AccordionList posts={posts} />
+      <LeftMenu
+        title={"Ways of Whales"}
+        menuItems={menu}
+        prefix="/about-orcas-main/"
+      >
+        <FeatureCard
+          title={featured.frontmatter.title}
+          content={featured.excerpt}
+        />
+        <AccordionList posts={posts} />
+      </LeftMenu>
     </Layout>
   )
 }
@@ -24,14 +32,14 @@ export const query = graphql`
   query WaysQuery {
     waysFeatured: allMarkdownRemark(
       filter: {
-        frontmatter: {templateKey: {regex: "/featured/"}}
-        fileAbsolutePath: {regex: "/ways-of-whales/"}
-    }
-    ){
-      edges{
-        node{
+        frontmatter: { templateKey: { regex: "/featured/" } }
+        fileAbsolutePath: { regex: "/ways-of-whales/" }
+      }
+    ) {
+      edges {
+        node {
           excerpt(pruneLength: 400)
-          frontmatter{
+          frontmatter {
             title
             image
           }
@@ -39,8 +47,9 @@ export const query = graphql`
       }
     }
     waysPosts: allMarkdownRemark(
-      filter: {frontmatter: {templateKey: {regex: "/post/"}}
-      fileAbsolutePath: {regex: "/ways-of-whales/"}
+      filter: {
+        frontmatter: { templateKey: { regex: "/post/" } }
+        fileAbsolutePath: { regex: "/ways-of-whales/" }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -54,7 +63,15 @@ export const query = graphql`
         }
       }
     }
+    menu: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/about-orcas-main/" }
+        frontmatter: { templateKey: { regex: "/featured/" } }
+      }
+    ) {
+      ...menuFrontmatter
+    }
   }
 `
 
-export default WaysWhales;
+export default WaysWhales

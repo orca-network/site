@@ -107,7 +107,7 @@ const Navbar = class extends React.Component {
               rel="noopener noreferrer"
             >
               <span className="icon">
-                <img src={facebook} alt="Facebook" />
+                <img src={facebook} alt="Facebook" style={{margin:"0"}} />
               </span>
             </a>
             <a
