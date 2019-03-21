@@ -28,15 +28,21 @@ const AccordionList = props => {
           return (
             <AccordionItem>
               <AccordionItemTitle>
-              <h3 className="u-position-relative">
-                        {title}
-                        <div className="accordion__arrow" role="presentation" />
-                    </h3>
+                <h3 className="u-position-relative">
+                  {title}
+                  <div className="accordion__arrow" role="presentation" />
+                </h3>
               </AccordionItemTitle>
               <AccordionItemBody>
-                <div class="container">
-                  <img src={image} style={{width: "200px"}}/>
-                  {excerpt}
+                <div>
+                  <p style={{overflow: "hidden", padding: "1em"}}>
+                    {" "}
+                    <img
+                      src={image}
+                      style={{ display: "inline !important", float: "left", width: "200px", paddingRight: "1em" }}
+                    />
+                    {excerpt}
+                  </p>
                 </div>
               </AccordionItemBody>
             </AccordionItem>

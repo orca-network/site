@@ -2,20 +2,26 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import AccordionList from "../../../components/accordion-list.js"
-import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
+import LeftMenu from "../../../components/pages/left-menu.js"
 import "../../../components/h1.scss"
 
 const Resource = props => {
   const posts = props.data.resourcePosts.edges;
   const featured = props.data.resourceFeature.edges[0].node;
-  console.log("alias query", posts, featured)
+  const menu = props.data.menu.edges
+
 
   return (
     <Layout>
-        <Banner title="Natural Resource"/>
-        <FeatureCard title={featured.frontmatter.title} content={featured.excerpt}/>
+         <LeftMenu title={"Resources"} menuItems={menu} prefix="/about-orcas-main/">
+        <FeatureCard
+            title={featured.frontmatter.title}
+            content={featured.excerpt}
+          />
           <AccordionList posts={posts} />
+
+        </LeftMenu>
     </Layout>
   )
 }
@@ -53,7 +59,14 @@ export const query = graphql`
         }
       }
     }
-
+    menu: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/about-orcas-main/" }
+        frontmatter: { templateKey: { regex: "/featured/" } }
+      }
+    ) {
+      ...menuFrontmatter
+    }
   }
 `
 
