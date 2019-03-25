@@ -18,7 +18,7 @@ const WaysWhales = props => {
       >
         <FeatureCard
           title={featured.frontmatter.title}
-          content={featured.excerpt}
+          content={featured.rawMarkdownBody}
         />
         <AccordionList posts={posts} />
       </LeftMenu>
@@ -36,15 +36,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/ways-of-whales/" }
       }
     ) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          frontmatter {
-            title
-            image
-          }
-        }
-      }
+      ...contentPost
     }
     waysPosts: allMarkdownRemark(
       filter: {
@@ -53,15 +45,7 @@ export const query = graphql`
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
-      edges {
-        node {
-          excerpt(pruneLength: 350)
-          frontmatter {
-            title
-            image
-          }
-        }
-      }
+      ...contentPost
     }
     menu: allMarkdownRemark(
       filter: {

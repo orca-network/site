@@ -21,7 +21,7 @@ const AccordionList = props => {
         {props.posts.map(edge => {
           const {
             node: {
-              excerpt,
+              rawMarkdownBody,
               frontmatter: { path, title, image },
             },
           } = edge
@@ -37,11 +37,14 @@ const AccordionList = props => {
                 <div>
                   <p style={{overflow: "hidden", padding: "1em"}}>
                     {" "}
+                    {image ?
                     <img
                       src={image}
-                      style={{ display: "inline !important", float: "left", width: "200px", paddingRight: "1em" }}
-                    />
-                    {excerpt}
+                      style={{ display: "inline !important", float: "left", width:"300px", paddingRight: "1em" }}
+                    /> :
+                    null
+                    }
+                    {rawMarkdownBody}
                   </p>
                 </div>
               </AccordionItemBody>
