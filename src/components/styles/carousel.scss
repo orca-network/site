@@ -1,0 +1,23 @@
+@import "../all.sass";
+
+.carousel .slide{
+    background: darken($sea-blue, 5%);
+}
+
+.carousel .slide .legend{
+    width: 100%;
+    // background: darken($sea-blue, 10%);
+    background: none;
+    bottom: 0;
+    border-radius: 0px;
+    left: 0;
+    // position: relative;
+    margin-left: 0;
+    padding-top: 3px;
+    padding-bottom: 15px;
+    opacity: .5;
+}
+
+.carousel .control-dots{
+    margin: 0px;
+}

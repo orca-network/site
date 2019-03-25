@@ -17,7 +17,7 @@ const Resource = props => {
          <LeftMenu title={"Resources"} menuItems={menu} prefix="/about-orcas-main/">
         <FeatureCard
             title={featured.frontmatter.title}
-            content={featured.excerpt}
+            content={featured.rawMarkdownBody}
           />
           <AccordionList posts={posts} />
 
@@ -34,14 +34,7 @@ export const query = graphql`
         fileAbsolutePath: {regex: "/resource/"}
     }
     ){
-      edges{
-        node{
-          excerpt(pruneLength: 400)
-          frontmatter{
-            title
-          }
-        }
-      }
+      ...contentPost
     }
     resourcePosts: allMarkdownRemark(
       filter: {
@@ -50,14 +43,7 @@ export const query = graphql`
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
-      edges {
-        node {
-          excerpt(pruneLength: 350)
-          frontmatter {
-            title
-          }
-        }
-      }
+      ...contentPost
     }
     menu: allMarkdownRemark(
       filter: {
