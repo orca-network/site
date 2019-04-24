@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../../../components/layout"
 import Banner from "../../../components/banner.js"
 import FeatureCard from "../../../components/feature-card.js"
-import "../../../components/h1.scss"
+import "../../../components/styles/h1.scss"
 
 const Archives = props => {
   const featured = props.data.archivesFeature.edges[0].node;

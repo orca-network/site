@@ -4,7 +4,7 @@ import Layout from "../../../components/layout"
 import AccordionList from "../../../components/accordion-list.js"
 import FeatureCard from "../../../components/feature-card.js"
 import LeftMenu from "../../../components/pages/left-menu.js"
-import "../../../components/h1.scss"
+import "../../../components/styles/h1.scss"
 
 const Resource = props => {
   const posts = props.data.resourcePosts.edges;

@@ -50,89 +50,91 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="navbar-brand">
-          <Link to="/" className="" title="Logo">
-            <img
-              src="/assets/network-logo.png"
-              alt="The Orca Network Logo"
-              style={{ width: "125px", margin: "1em" }}
-            />
-          </Link>
-
-          {/* Hamburger menu */}
-          <div
-            className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-            data-target="navMenu"
-            onClick={() => this.toggleHamburger()}
-          >
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-        <div
-          id="navMenu"
-          className={`navbar-menu ${this.state.navBarActiveClass}`}
+      <>
+        <nav
+          className="navbar is-transparent"
+          role="navigation"
+          aria-label="main-navigation"
         >
-          <div className="navbar-start has-text-centered">
-            <Link className="navbar-item" to="/about-orcas-main">
-              All About Orcas
+          <div className="navbar-brand">
+            <Link to="/" className="" title="Logo">
+              <img
+                src="/assets/network-logo.png"
+                alt="The Orca Network Logo"
+                style={{ width: "125px", margin: "1em" }}
+              />
             </Link>
-            <Link className="navbar-item" to="/lolita-tokikae">
-              Lolita/Tokikae
-            </Link>
-            <Link className="navbar-item" to="/museum">
-              Museum
-            </Link>
-            <Link className="navbar-item" to="/sightings">
-              Sightings
-            </Link>
-            <Link className="navbar-item" to="/sightings">
-              Strandings
-            </Link>
-            {/* <Link className="navbar-item" to="/contact/examples">
+
+            {/* Hamburger menu */}
+            <div
+              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              data-target="navMenu"
+              onClick={() => this.toggleHamburger()}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <div
+            id="navMenu"
+            className={`navbar-menu ${this.state.navBarActiveClass}`}
+          >
+
+              <Link className="navbar-item" to="/about-orcas-main">
+                All About Orcas
+              </Link>
+              {/* <Link className="navbar-item" to="/lolita-tokikae">
+                Lolita/Tokikae
+              </Link>
+              <Link className="navbar-item" to="/museum">
+                Museum
+              </Link>
+              <Link className="navbar-item" to="/sightings">
+                Sightings
+              </Link>
+              <Link className="navbar-item" to="/sightings">
+                Strandings
+              </Link> */}
+              {/* <Link className="navbar-item" to="/contact/examples">
                 Form Examples
               </Link> */}
-          </div>
-          <div className="navbar-end has-text-centered">
-            <a
-              className="navbar-item"
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={facebook} alt="Facebook" style={{margin:"0"}} />
-              </span>
-            </a>
-            <a
-              className="navbar-item"
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={instagram} alt="Instagram" />
-              </span>
-            </a>
-            <a
-              className="navbar-item"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <a to="/" class="button is-warning is-normal is-rounded">
-                Donate
+            </div>
+            <div className="navbar-end has-text-centered">
+              <a
+                className="navbar-item"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon">
+                  <img src={facebook} alt="Facebook" style={{ margin: "0" }} />
+                </span>
               </a>
-            </a>
+              <a
+                className="navbar-item"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="icon">
+                  <img src={instagram} alt="Instagram" />
+                </span>
+              </a>
+              <a
+                className="navbar-item"
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <a to="/" class="button is-warning is-normal is-rounded">
+                  Donate
+                </a>
+              </a>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </>
     )
   }
 }
