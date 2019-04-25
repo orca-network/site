@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 // import logo from "assets/network-logo.png"
-import facebook from "../images/facebook.svg"
-import instagram from "../images/instagram.svg"
-import twitter from "../images/twitter.svg"
+import facebook from "../../images/facebook.svg"
+import instagram from "../../images/instagram.svg"
+import twitter from "../../images/twitter.svg"
 
 class Footer extends React.Component {
   render() {

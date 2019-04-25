@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, withPrefix } from "gatsby"
 
-import "./styles/accordion.scss"
+import "./accordion.scss"
 
 import {
   Accordion,

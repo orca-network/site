@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from "../banner.js"
-import SideMenu from "../side-menu.js"
+import Banner from "../banner/banner.js"
+import SideMenu from "../side-menu/side-menu.js"
 
 const LeftMenu = (props) => {
   return (

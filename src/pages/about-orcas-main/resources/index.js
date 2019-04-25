@@ -1,10 +1,9 @@
 import React from "react"
 
-import Layout from "../../../components/layout"
-import AccordionList from "../../../components/accordion-list.js"
-import FeatureCard from "../../../components/feature-card.js"
+import Layout from "../../../components/layout/layout.js"
+import AccordionList from "../../../components/accordion/accordion-list.js"
+import FeatureCard from "../../../components/feature-card/feature-card.js"
 import LeftMenu from "../../../components/pages/left-menu.js"
-import "../../../components/h1.scss"
 
 const Resource = props => {
   const posts = props.data.resourcePosts.edges;

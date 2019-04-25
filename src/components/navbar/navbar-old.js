@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import facebook from "../images/facebook.svg"
-import instagram from "../images/instagram.svg"
+import facebook from "../../images/facebook.svg"
+import instagram from "../../images/instagram.svg"
 
 //use to build in dropdown components with the navbar
 
@@ -43,7 +43,7 @@ const Navbar = class extends React.Component {
             })
           : this.setState({
               navBarActiveClass: "",
-            })
+            });
       }
     )
   }
@@ -137,4 +137,4 @@ const Navbar = class extends React.Component {
   }
 }
 
-export default Navbar
+// export default Navbar
