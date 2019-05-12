@@ -16,7 +16,7 @@ import {
 const AccordionList = props => {
   console.log(props.posts[0].node.excerpt)
   return (
-    <div>
+    <div class="accordion-container">
       <Accordion>
         {props.posts.map(edge => {
           const {

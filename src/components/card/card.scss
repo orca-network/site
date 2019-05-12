@@ -1,0 +1,31 @@
+// @media only screen and (max-width: 600px) {
+//     @include flex(column, center, center);
+
+// }
+
+div.card{
+    @include flex(column, center, center);
+    @include box-shadow;
+    height: 100%;
+    padding: 1em;
+    min-width: 180px;
+
+    img{
+        height: 160px;
+        width: 160px;
+    }
+    div > * {
+        text-align: center;
+        margin: .3em;
+    }
+}
+
+div.info{
+    width: 90%;
+    margin: 1em auto;
+    @include flex(row, start, start);
+    div{
+        @include flex(column, start, start);
+    }
+}
+

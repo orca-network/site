@@ -11,9 +11,9 @@ class SideMenu extends React.Component {
   render() {
     //  console.log('path', props.prefix.concat(props.menuItems[0].node.frontmatter.title.toLowerCase().replace(' ', '-')) );
     return (
-      <aside >
-        <h2 >{this.props.title}</h2>
-        <ul >
+      <aside class="menu" style={{ margin: "2rem" }}>
+        <h2 class="menu-label">{this.props.title}</h2>
+        <ul class="menu-list">
           {this.props.menuItems.map(item => {
             return (
               <li>

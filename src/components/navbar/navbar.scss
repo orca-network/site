@@ -18,36 +18,30 @@ div.hamburger {
 }
 
 .wrapper {
+  z-index: 1;
   transition: opacity 1s ease-out;
+  background-color: white;
   position: fixed;
   top: 8px;
   left: 8px;
   width: calc(100% - 1em);
-  background: lighten($accent-color, 15%);
   border-radius: 0px;
   border: solid 0px #fff;
   opacity: 0.9;
 }
 
-.footer {
-  min-height: 200px;
-  padding: 20px;
-  background: #e4e4e4;
-  border-radius: 0 0 10px 10px;
-}
-
-.pageTitle {
-  font-size: 24px;
-  line-height: 40px;
-  font-weight: 700;
-  color: #000;
+#logo{
+    margin: 0;
+    img{
+        width: 100px;
+    }
 }
 
 .navigation {
+  // position: absolute;
   text-align: center;
   list-style: none;
   padding: 0;
-  margin: 0;
   height: -webkit-fill-available;
 }
 
@@ -60,12 +54,12 @@ div.hamburger {
   padding: 0 20px;
   text-decoration: none;
   line-height: 40px;
-  color: #fff;
+  color: $black;
 }
 
 .navigation li:hover {
   transition: all ease-in-out 0.2s;
-  background-color: lighten($accent-color, 8%);
+  background-color: lighten($primary-invert, 10%);
 }
 
 .navigation li div {
@@ -73,7 +67,7 @@ div.hamburger {
   padding: 0 20px;
   text-decoration: none;
   line-height: 40px;
-  color: #fff;
+  color: $black;
 }
 
 .navigation ul {
@@ -89,7 +83,6 @@ div.hamburger {
 
 .navigation li:hover > ul {
   display: block;
-  // background: lighten($accent-color, 10%);
   border-top: 0;
   -webkit-border-radius: 0 0 0px 0px;
   border-radius: 0 0 0px 0px;
@@ -97,17 +90,15 @@ div.hamburger {
 
 .navigation li li a:hover {
   transition: all ease-in-out 0.5s;
-  background: lighten($accent-color, 5%);
 }
 
 @media only screen and (min-width: 600px) {
   .top {
     height: 2em;
-    background: $accent-color;
+    background: $primary;
   }
 
   .wrapper {
-    height: 4em;
     position: inherit;
     width: 100%;
   }
@@ -116,11 +107,11 @@ div.hamburger {
     display: none;
   }
 
-  .navigation {
-    display: block;
-    // background: lighten($accent-color, 18%);
-
-    @include flex(row, flex-start, center);
+  
+  .navigation {  
+    position: absolute;  
+      @include flex(row, flex-start, start);
+      height: fit-content;
   }
 
   .navigation > li {

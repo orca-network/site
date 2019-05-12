@@ -3,20 +3,14 @@ import React from "react"
 //make a card that can render a larger, more feature card content for any of the sub-main pages
 const featureCard = props => {
   return (
-    <div class="card" style={{margin: "2rem"}}>
-      <div class="card-header">
-        <div class="card-header-title">{props.title}</div>
-      </div>
-      <div class="columns">
-      <div class="card-image column is-one-third">
-        <figure class="image" style={{ margin: "1rem" }}>
-          <img src={props.image} style={{width: "300px"}}/>
-        </figure>
-      </div>
-      <div class="card-content">{props.content}</div>
-      </div>
+    <div className="feature-card">
+      <img src={props.image} />
+      <article>
+        <h2 className="clip-text-maybe">{props.title}</h2>
+        <p>{props.content}</p>
+      </article>
     </div>
   )
 }
 
-export default featureCard;
+export default featureCard

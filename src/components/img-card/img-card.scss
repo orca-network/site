@@ -1,0 +1,9 @@
+div.img-card{
+    @include flex(column, center, center);
+    @include box-shadow;
+    width: 160px;
+    img{
+        height: 160px;
+        width: 160px;
+    }
+}
