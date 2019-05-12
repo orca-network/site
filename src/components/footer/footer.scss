@@ -1,0 +1,29 @@
+footer {
+  background-color: $primary;
+  @include flex(column, center, center);
+  ul {
+    @include flex(row, center, center);
+    li {
+      margin: 1em 2em 1em 2em;
+      a {
+        color: $primary-invert;
+      }
+        a.social-media{
+            background-color: white;
+            padding: 6px;
+            border-radius: 100%;
+            @include flex(row, center, center);
+        }
+      img{
+          width: 1em;
+      }
+      a:hover {
+        color: white;
+      }
+    }
+  }
+  > div {
+    text-align: center;
+    color: $primary-invert;
+  }
+}

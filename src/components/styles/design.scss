@@ -1,5 +1,32 @@
 @import "./reset.css";
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400|Playfair+Display');
 @import "./variables.scss";
 @import "./mixins";
 @import "../navbar/navbar.scss";
-@import "./all.sass"
+@import "../footer/footer.scss";
+@import "../banner/banner.scss";
+@import "../menu-left/menu-left.scss";
+@import "../feature-card/feature-card.scss";
+@import "../img-card/img-card.scss";
+@import "../card/card.scss";
+@import "../layout/layout.scss";
+@import "./all.sass";
+
+body * {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    // font-family: 'Playfair Display', serif;
+}
+
+
+h2{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h3, h4{
+    font-weight: bold;
+    font-size: 1.2em;
+
+    // font-size: 2em;
+}

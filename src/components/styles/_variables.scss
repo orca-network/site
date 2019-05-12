@@ -1,9 +1,9 @@
-$sea-blue: #294c74;
-$sea-blue-invert: #E7E1DB;
+$sea-blue: #1f4066;
+$sea-blue-invert:#fcfcfc;
 $orange: #F17633;
 
 $primary: $sea-blue;
-$primary-invert: $sea-blue-invert;
+$primary-invert: #fcfcfc;
 $warning: $orange;
 $body-color: #333;
 $black: #2b2523;
@@ -18,5 +18,4 @@ $hover-color: lighten($text-color, 40%);
 $accent-color: #294c74;
 $secondary-color: rgb(252, 214, 4);
 $tertiary-color: rgb(25, 119, 75);
-$font: Ubuntu, Arial;
 $nav-line-height: 40px;

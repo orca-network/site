@@ -23,3 +23,17 @@ export const ContentPostFragment = graphql`
     }
   }
 `
+
+export const ContentExcerptFragment = graphql`
+  fragment contentExcerpt on MarkdownRemarkConnection {
+    edges {
+      node {
+        ...excerpt
+        frontmatter {
+          image
+          title
+        }
+      }
+    }
+  }
+`

@@ -1,0 +1,37 @@
+@media only screen and (max-width: 600px) {
+  div.menu-left ul {
+    display: none;
+    div{
+      padding: 1em;
+    }
+  }
+  
+}
+
+div.menu-left {
+  @include flex(row, space-around, center);
+
+  > div{
+    margin: 0em 1em 1em 1em;
+    width: 100%;
+  }
+  ul {
+    margin: 0em 1em;
+    li {
+      white-space: nowrap;
+      margin: 0em 1em 1em 1em;
+      a {
+        width: 20em;
+        color: $black;
+      }
+    }
+    li.menu-header {
+      font-weight: bold;
+    }
+    li:not(.menu-header):hover {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

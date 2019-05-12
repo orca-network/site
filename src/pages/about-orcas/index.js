@@ -6,37 +6,30 @@ import FeatureCard from "../../components/feature-card/feature-card.js"
 import MenuLeft from "../../components/menu-left/left-menu.js"
 const aboutImage =
   "https://static.wixstatic.com/media/760f65_3113669cb3064cdf9acd16f41934984b~mv2.jpg"
-const menuItems = [
-  { title: "Archives", path: "/sightings/archives" },
-  { title: "Report Sighting", path: "/sightings/archives" },
-  { title: "Viewpoints Map", path: "/sightings/viewpoints-map" },
-  { title: "Whale Watching Trips", path: "/sightings/whale-watch" },
-]
 
-const Sightings = props => {
-  // const query = props.data.mainContent.edges[0].node;
-  const query = props.data.allMarkdownRemark.edges[0].node
-  const menu = props.data.menu.edges;
-
+const AboutOrcaMain = props => {
+  const query = props.data.mainContent.edges[0].node
+  const menu = props.data.menu.edges
+  console.log('menu results', menu);
   return (
     <Layout>
-      <MenuLeft title="Sightings" menuItems={menu} prefix="/about-orcas/">
-        <FeatureCard
-          title={query.frontmatter.title}
-          content={query.excerpt}
-          image={aboutImage}
-        />
+      <MenuLeft title="About Orcas" menuItems={menu} prefix="/about-orcas/">
+      <FeatureCard
+              title={query.frontmatter.title}
+              content={query.excerpt}
+              image={aboutImage}
+            />
       </MenuLeft>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query SightingsQuery {
-    allMarkdownRemark(
+  query AboutQuery {
+    mainContent: allMarkdownRemark(
       filter: {
         frontmatter: { templateKey: { regex: "/section-home/" } }
-        fileAbsolutePath: { regex: "/sightings/" }
+        fileAbsolutePath: { regex: "/about-orcas/" }
       }
     ) {
       edges {
@@ -49,7 +42,7 @@ export const query = graphql`
       }
     }
     menu: allMarkdownRemark(
-      filter:{fileAbsolutePath: {regex: "/sightings/"}
+      filter:{fileAbsolutePath: {regex: "/about-orcas/"}
         frontmatter: {templateKey: {regex: "/featured/"}}
       }
     ){
@@ -58,4 +51,4 @@ export const query = graphql`
   }
 `
 
-export default Sightings
+export default AboutOrcaMain
