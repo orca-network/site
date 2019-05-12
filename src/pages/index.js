@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout.js"
 import coverImageOne from "../images/cover-image.png"
 import coverImageTwo from "../images/david-ellifrit-encounter-57.png"
 import coverImageThree from "../images/mark-malleson-encounter-95.png"
 import { Link } from "gatsby"
-import ImgCard from "../components/img-card.js"
+import ImgCard from "../components/img-card/img-card.js"
 
-import { Carousel } from "react-responsive-carousel"
+import Carousel from "../components/carousel/carousel.js"
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
 import "../components/styles/carousel.scss"
 
@@ -20,21 +20,8 @@ export default ({data})=> {
           The Orca Network
         </h1>{" "} */}
           <section class="section" style={{ padding: "0em" }}>
-            <Carousel infiniteLoop="true" autoPlay="true" interval="5000" transitionTime="700" >
-              <div>
-                <img src={coverImageOne} />
-                <p className="legend" >Legend 1</p>
-              </div>
-              <div>
-                {/* <img src={coverImageTwo} /> */}
-                <Img fluid={data.file.childImageSharp.fluid}/>
-                <p className="legend">Legend 2</p>
-              </div>
-              <div>
-                <img src={coverImageThree} />
-                <p className="legend">Legend 3</p>
-              </div>
-            </Carousel>
+            {/* <Carousel slides={slides}/> */}
+            <div style={{width: "100%", height: "400px"}}/>
           </section>
           <section class="hero is-primary">
             <div class="hero-body">

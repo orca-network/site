@@ -1,9 +1,8 @@
 import React from "react"
 
-import Layout from "../../../components/layout"
-import Banner from "../../../components/banner.js"
-import FeatureCard from "../../../components/feature-card.js"
-import "../../../components/h1.scss"
+import Layout from "../../../components/layout/layout.js"
+import Banner from "../../../components/banner/banner.js"
+import FeatureCard from "../../../components/feature-card/feature-card.js"
 
 const Archives = props => {
   const featured = props.data.archivesFeature.edges[0].node;

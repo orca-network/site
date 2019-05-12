@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import Layout from "../../components/layout.js"
-import Banner from "../../components/banner.js"
-import SideMenu from "../../components/side-menu.js"
-import FeatureCard from "../../components/feature-card.js"
+import Layout from "../../components/layout/layout.js"
+import Banner from "../../components/banner/banner.js"
+import SideMenu from "../../components/side-menu/side-menu.js"
+import FeatureCard from "../../components/feature-card/feature-card.js"
 
 const aboutImage =
   "https://static.wixstatic.com/media/760f65_3113669cb3064cdf9acd16f41934984b~mv2.jpg"
