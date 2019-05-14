@@ -1,8 +1,31 @@
 @import "./hamburgers.scss";
 
-.hide {
-  display: none;
+nav {
+  #logo{
+    display: none;
+  }
+
+  .wrapper {
+    // display: none;
+    z-index: 1;
+    transition: opacity 1s ease-out;
+    background-color: white;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    width: calc(100% - 1em);
+    border-radius: 0px;
+    border: solid 0px #fff;
+    opacity: 0.9;
+  }
+
+  .toggle-hide {
+    display: none;
+  }
+
 }
+
+
 
 div.hamburger > div {
   height: 5px;
@@ -15,26 +38,6 @@ div.hamburger {
   margin: 1em 0 0 8px;
   margin-left: 8px;
   @include flex(column, flex-start, center);
-}
-
-.wrapper {
-  z-index: 1;
-  transition: opacity 1s ease-out;
-  background-color: white;
-  position: fixed;
-  top: 8px;
-  left: 8px;
-  width: calc(100% - 1em);
-  border-radius: 0px;
-  border: solid 0px #fff;
-  opacity: 0.9;
-}
-
-#logo{
-    margin: 0;
-    img{
-        width: 100px;
-    }
 }
 
 .navigation {
@@ -90,36 +93,56 @@ div.hamburger {
 
 .navigation li li a:hover {
   transition: all ease-in-out 0.5s;
+  text-decoration: underline;
 }
 
-@media only screen and (min-width: 600px) {
-  .top {
-    height: 2em;
-    background: $primary;
-  }
+@media only screen and (min-width: 800px) {
+  nav {
+    button{
+      display: none;
+    }
 
-  .wrapper {
-    position: inherit;
-    width: 100%;
-  }
+    .toggle-hide{
+      display: inherit;
+    }
 
-  .hamburger div {
-    display: none;
-  }
+    .top {
+      height: 2em;
+      background: $primary;
+    }
 
-  
-  .navigation {  
-    position: absolute;  
+    .wrapper {
+      position: relative;
+      width: 100%;
+      opacity: 1;
+
+    }
+
+    .hamburger div {
+      display: none;
+    }
+
+    .navigation {
+      position: absolute;
       @include flex(row, flex-start, start);
       height: fit-content;
-  }
 
-  .navigation > li {
-    margin-top: calc(4em - 40px);
-  }
+      #logo {
+        display: inherit;
+        margin: 0;
+        img {
+          width: 100px;
+        }
+      }
+    }
 
-  .navigation li:hover {
-    align-items: center;
-    width: auto;
+    .navigation > li {
+      margin-top: calc(4em - 40px);
+    }
+
+    .navigation li:hover {
+      align-items: center;
+      width: auto;
+    }
   }
 }

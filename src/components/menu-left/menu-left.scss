@@ -11,6 +11,8 @@
 div.menu-left {
   @include flex(row, space-around, center);
 
+  margin-top: 3em;
+  
   > div{
     margin: 0em 1em 1em 1em;
     width: 100%;

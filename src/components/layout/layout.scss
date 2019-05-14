@@ -1,31 +1,28 @@
-@media only screen and (max-width: 600px) {
-    .layout{
-        > section {
-            > section.content {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-        }
-
+.layout {
+  > section {
+    > section.content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
+  }
 }
 
-.layout{
+@media only screen and (min-width: 600px) {
+  .layout {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    > section{
-        flex: 1;
-        margin-top: 7em;
-        @include flex(column, center, center);
-        > section.content {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
+    > section {
+      flex: 1;
+      margin-top: 7em;
+      @include flex(column, center, center);
+      > section.content {
+        display: flex;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        width: 100%;
+      }
     }
-    
+  }
 }
-
-

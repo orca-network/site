@@ -1,6 +1,6 @@
 ---
 templateKey: section-home
-title: Orca
+title: All About Orcas
 date: '1999-12-31 11:59:59 -0800'
 image: /assets/cover-image.png
 rating: 1

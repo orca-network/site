@@ -2,6 +2,6 @@
 templateKey: featured
 title: Ways of Whales
 date: '1999-12-31 11:59:59 -0800'
-image: /assets/profile-distance.jpg
+image: /assets/cover-image.png
 ---
 This is a general post about orca special orcas. Ipsum ipsum adipisicing sunt ea duis elit consectetur. Proident officia magna ullamco enim irure Lorem velit magna culpa commodo excepteur incididunt velit. Aute ipsum aute culpa fugiat irure nostrud non minim fugiat dolor id cillum. Voluptate adipisicing et consectetur est excepteur fugiat sit. Officia irure nisi irure laborum laborum reprehenderit. Consequat non excepteur dolor mollit culpa anim nisi.
