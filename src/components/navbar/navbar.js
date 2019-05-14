@@ -14,9 +14,8 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
       toggle: true,
-      showMenu: "hide",
+      showMenu: "wrapper toggle-hide",
       height: null,
       width: null,
       active: false,
@@ -44,7 +43,7 @@ class Navbar extends React.Component {
       : this.setState({
           toggle: true,
           hamburgerClass: "hamburger hamburger--3dx-r",
-          showMenu: "hide",
+          showMenu: "wrapper toggle-hide",
         })
     console.log(this.state)
   }
@@ -62,11 +61,19 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <>
-        <If condition={this.state.width < 600}>
-          <Then>
+      <nav>
+        {/* <If condition={this.state.width < 600}> */}
+          {/* <Then> */}
             <div className={this.state.showMenu} onClick={this.nav}>
               <ul className="navigation">
+              <li id="logo">
+                  <Link to="/" className="" title="Logo">
+                    <img
+                      src="/assets/network-logo.png"
+                      alt="The Orca Network Logo"
+                    />
+                  </Link>{" "}
+                </li>
                 {links.map((link, i) => {
                   return <MenuItem link={link} showSub={true} key={i} />
                 })}
@@ -81,10 +88,12 @@ class Navbar extends React.Component {
                 <span className="hamburger-inner" />
               </span>
             </button>
-          </Then>
-          <Else>
+          {/* </Then> */}
+          {/* <Else> */}
             {/* <div className="top" /> */}
-            <div className="wrapper">
+            
+
+            {/* <div className="wrapper">
               <ul className="navigation">
                 <li id="logo">
                   <Link to="/" className="" title="Logo">
@@ -98,10 +107,12 @@ class Navbar extends React.Component {
                   return <MenuItem link={link} showSub={true} key={i} />
                 })}
               </ul>
-            </div>
-          </Else>
-        </If>
-      </>
+            </div> */}
+
+
+          {/* </Else> */}
+        {/* </If> */}
+      </nav>
     )
   }
 }

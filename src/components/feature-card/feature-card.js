@@ -6,8 +6,8 @@ const featureCard = props => {
     <div className="feature-card">
       <img src={props.image} />
       <article>
-        <h2 className="clip-text-maybe">{props.title}</h2>
-        <p>{props.content}</p>
+        <h2 className="clip-text">{props.title}</h2>
+        {/* <p>{props.content}</p> */}
       </article>
     </div>
   )
