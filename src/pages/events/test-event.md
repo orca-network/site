@@ -1,7 +1,8 @@
 ---
 layout: blog
-templateKey: featured
+templateKey: events
 title: Event
+path: "/events/test-event"
 subtitle: new event
 date: 1999-12-31 11:59:59 -0800
 location: Seattle 

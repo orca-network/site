@@ -1,36 +1,38 @@
-// const path = require("path")
+// const path = require("path"),
+//   fs = require("fs");
 
-// exports.createPages = ({ actions, graphql }) => {
-//   const { createPage } = actions
+// // Create pages from markdown files.
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions;
 
-//   const postTemplate = path.resolve(`src/templates/post.js`)
-
-//   return graphql(`
-//     {
-//       allMarkdownRemark(
-//         sort: { order: DESC, fields: [frontmatter___date] }
-//         limit: 1000
-//       ) {
-//         edges {
-//           node {
-//             frontmatter {
-//               path
+//     const result = await graphql(
+//       `
+//         query {
+//           events: allMarkdownRemark(
+//             filter: { fileAbsolutePath: { regex: "/events/" } }
+//             sort: { fields: [frontmatter___date], order: DESC }
+//           ) {
+//             edges {
+//               node {
+//                 id
+//                 frontmatter {
+//                   path
+//                   title
+//                   date(formatString: "DD MMMM YYYY")
+//                 }
+//                 excerpt
+//               }
 //             }
 //           }
 //         }
-//       }
-//     }
-//   `).then(result => {
-//     if (result.errors) {
-//       return Promise.reject(result.errors)
-//     }
-
-//     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+//       `
+//     );
+//     result.data[events].edges.forEach(({ node }) => {
+//       const component = path.resolve(`src/templates/general.js`);
 //       createPage({
-//         path: node.frontmatter.path,
-//         component: postTemplate,
-//         context: {}, // additional data can be passed via context
-//       })
-//     })
-//   })
-// }
+//         component,
+//         path: "/events/test-event/",
+//         context: { title: "hello" },
+//       });
+//     });
+// };

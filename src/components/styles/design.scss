@@ -9,6 +9,8 @@
 @import "../feature-card/feature-card.scss";
 @import "../img-card/img-card.scss";
 @import "../card/card.scss";
+@import "../facebook/facebook.scss";
+@import "../forms/form.scss";
 @import "../accordion/accordion.scss";
 @import "../layout/layout.scss";
 
@@ -31,4 +33,11 @@ h3, h4{
     font-size: 1.2em;
 
     // font-size: 2em;
+}
+
+.centerRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

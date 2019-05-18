@@ -7,8 +7,9 @@ import { Link } from "gatsby"
 import InfoCard from "../components/card/info-card.js"
 import Card from "../components/card/card.js"
 import Banner from "../components/banner/banner.js"
+import Subscribe from "../components/forms/subscribe.js";
+
 import Carousel from "../components/carousel/carousel.js"
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
 import "../components/styles/carousel.scss"
 
 import Img from "gatsby-image"
@@ -17,27 +18,32 @@ let description =
   "Orca Network is a 502(c)(3) non-profit organization dedicated to rasing awareness of the whales of the Pacific Northwest, an the importance of providing them healthy and safe habitats."
 
 export default ({ data }) => {
-  console.log("about orca results", data.AboutOrcasMain)
+  // console.log("about orca results", data.AboutOrcasMain)
+  console.log("image", data.coverImg)
   return (
     <Layout>
-      <Carousel />
+      {/* <Carousel /> */}
+      <Img
+        fluid={data.coverImg.childImageSharp.fluid}
+        style={{ width: "100%" }}
+      />
+
       <Banner title="Orca Network" sub={description}>
         {/* add the button here */}
         <a to="/" class="button is-warning is-normal is-rounded">
           Support Orca Network
         </a>
       </Banner>
-      <section>
-        <InfoCard title="event" 
-        subtitle="new event for whales"
-        date="1/1/1"
-        location="Seattle"
-        description="my event is going to be fantastic" 
-        img={null}>
-        <p>Date: 1/1/1</p>
-        </InfoCard>
+      <section style={{ width: "100%" }}>
+        <InfoCard
+          title="Movie"
+          subtitle="The Orca Network"
+          date="1/1/1"
+          location={data.events.edges[0].node.frontmatter.location}
+          description="A movie about orcas by Orca Network"
+          img={null}
+        />
       </section>
-      
 
       <section className="content">
         <div class="column is-one-quarter">
@@ -65,7 +71,9 @@ export default ({ data }) => {
             img="assets/whale-sighting-logo.png"
           />
         </div>
+
       </section>
+        <Subscribe/>
     </Layout>
   )
 }
@@ -75,16 +83,29 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    file(relativePath: { regex: "/david-ellifrit/" }) {
+    coverImg: file(relativePath: { eq: "david-ellifrit-encounter-57.png" }) {
+      relativePath
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-
+    events: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/events/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            location
+            date
+            title
+          }
+          excerpt
+        }
+      }
+    }
   }
 `

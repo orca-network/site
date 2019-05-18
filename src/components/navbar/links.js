@@ -13,7 +13,7 @@ let links = [
     main: { title: "Sightings", link: "/sightings" },
     sub: [
       { title: "Archives", link: "sightings/archives" },
-      { title: "Report Sightigs", link: "sightings/report-sighting" },
+      { title: "Report a Sighting", link: "sightings/report-a-sighting" },
       { title: "View Point Map", link: "sightings/viewpoints-map" },
       { title: "Whale Watching", link: "sightings/whale-watch" },
     ],

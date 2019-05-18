@@ -1,0 +1,37 @@
+form {
+    margin: 0 5%;
+    width: 90%;
+    fieldset{
+        box-sizing: border-box;
+        border: 1px solid black;
+        padding: 2em;
+        width: 100%;
+    }
+    @include flex(column, start, start);
+    label{
+        @include flex(column, start, start);
+        margin: 1em 0em;
+        textarea{
+            width: 100%;
+            height: 6em;
+        }
+    }
+}
+
+#mc_embed_signup{
+    width: 100%;
+    @include flex(row, center, center);
+    form{
+        // width: 10%;
+        @include flex(row, center, center);
+    }
+    fieldset{
+        width: 50%;
+    }
+    .mc-field-group{
+       @include flex(row, center, space-between);
+       > label{
+         margin-right: 2em; 
+       }
+    }
+}
