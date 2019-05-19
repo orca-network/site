@@ -1,5 +1,11 @@
 .layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   > section {
+    flex: 1;
+    @include flex(column, center, center);
+    margin-top: 70px;
     > section.content {
       display: flex;
       flex-direction: row;
@@ -10,13 +16,13 @@
 
 @media only screen and (min-width: 600px) {
   .layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    // height: 100vh;
     > section {
-      flex: 1;
+      //   flex: 1;
       margin-top: 7em;
-      @include flex(column, center, center);
+    //   @include flex(column, center, center);
       > section.content {
         display: flex;
         // flex-direction: row;

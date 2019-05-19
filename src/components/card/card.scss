@@ -7,6 +7,7 @@ div.card{
     @include flex(column, center, center);
     @include box-shadow;
     height: 100%;
+    width: 100%;
     padding: 1em;
     min-width: 180px;
 

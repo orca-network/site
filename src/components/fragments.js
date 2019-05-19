@@ -15,6 +15,7 @@ export const ContentPostFragment = graphql`
     edges {
       node {
         rawMarkdownBody
+        html
         frontmatter {
           image
           title

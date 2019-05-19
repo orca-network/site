@@ -1,3 +1,4 @@
+
 .feature-card{
     // margin: 0 3em 3em 3em;
     @include flex(row, start, start);
@@ -9,7 +10,7 @@
         height: 100%;
     }
     h2{
-        font-size: 3em;
+        font-size: 2em;
     }
     article {
         padding: 1em;
@@ -23,6 +24,14 @@
         * {
             margin: 1em 0em;
             line-height: 1.2em;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .feature-card{
+        h2{
+            font-size: 2em;
         }
     }
 }

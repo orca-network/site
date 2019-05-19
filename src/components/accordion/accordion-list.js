@@ -20,6 +20,7 @@ const AccordionList = props => {
           const {
             node: {
               rawMarkdownBody,
+              html,
               frontmatter: { path, title, image },
             },
           } = edge
@@ -42,7 +43,11 @@ const AccordionList = props => {
                     /> :
                     null
                     }
-                    {rawMarkdownBody}
+                    {/* TODO: find another way beside the below to set html*/}
+
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+
+                    {/* {rawMarkdownBody} */}
                   </p>
                 </div>
               </AccordionItemBody>

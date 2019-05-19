@@ -7,30 +7,27 @@ import MenuLeft from "../../components/menu-left/left-menu.js"
 const aboutImage =
   "https://static.wixstatic.com/media/760f65_3113669cb3064cdf9acd16f41934984b~mv2.jpg"
 
-const Sightings = props => {
-  // const query = props.data.mainContent.edges[0].node;
-  const query = props.data.allMarkdownRemark.edges[0].node;
-  const menu = props.data.menu.edges;
-
+const MuseumMain = props => {
+  const query = props.data.mainContent.edges[0].node
   return (
     <Layout>
-      <MenuLeft title="Sightings" menuItems={menu} prefix="/sightings/">
-        <FeatureCard
-          title={query.frontmatter.title}
-          content={query.excerpt}
-          image={aboutImage}
-        />
-      </MenuLeft>
+      {/* <MenuLeft title="Museum" menuItems={null} prefix="/about-orcas/"> */}
+      <FeatureCard
+              title={query.frontmatter.title}
+              content={query.excerpt}
+              image={aboutImage}
+            />
+      {/* </MenuLeft> */}
     </Layout>
   )
 }
 
 export const query = graphql`
-  query SightingsQuery {
-    allMarkdownRemark(
+  query MuseumQuery {
+    mainContent: allMarkdownRemark(
       filter: {
         frontmatter: { templateKey: { regex: "/section-home/" } }
-        fileAbsolutePath: { regex: "/sightings/" }
+        fileAbsolutePath: { regex: "/museum/" }
       }
     ) {
       edges {
@@ -42,14 +39,7 @@ export const query = graphql`
         }
       }
     }
-    menu: allMarkdownRemark(
-      filter:{fileAbsolutePath: {regex: "/sightings/"}
-        frontmatter: {templateKey: {regex: "/featured/"}}
-      }
-    ){
-      ...menuFrontmatter
-    }
   }
 `
 
-export default Sightings
+export default MuseumMain
