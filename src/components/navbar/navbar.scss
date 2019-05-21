@@ -1,28 +1,28 @@
 @import "./hamburgers.scss";
 
 nav {
-  #logo{
+  #logo {
     display: none;
+    a {
+      @include flex(row, center, center);
+    }
   }
-
   .wrapper {
     // display: none;
     z-index: 1;
     transition: opacity 1s ease-out;
-    background-color: white;
     position: fixed;
     top: 8px;
     left: 8px;
     width: calc(100% - 1em);
     border-radius: 0px;
     border: solid 0px #fff;
-    opacity: 0.9;
+    opacity: .95;
   }
 
   .toggle-hide {
     display: none;
   }
-
 }
 
 div.hamburger > div {
@@ -39,7 +39,8 @@ div.hamburger {
 }
 
 .navigation {
-  // position: absolute;
+  background-color: $primary;
+  width: 100%;
   text-align: center;
   list-style: none;
   padding: 0;
@@ -47,20 +48,32 @@ div.hamburger {
 }
 
 .navigation > li {
-  margin-top: 2em;
+  // margin-top: 2em;
 }
 
-.navigation li a {
-  display: block;
-  padding: 0 20px;
-  text-decoration: none;
-  line-height: 40px;
-  color: $black;
+.navigation {
+
+  li a{
+    display: block;
+    padding: 0 5px;
+    text-decoration: none;
+    line-height: 40px;
+    // color: $black;
+    color: white;
+  }
+  > li > a{
+    font-weight: bold;
+    // padding: 0 15px;
+  }
 }
+
+// .navigation li a {
+// }
+
 
 .navigation li:hover {
   transition: all ease-in-out 0.2s;
-  background-color: lighten($primary-invert, 10%);
+  // background-color: lighten($primary-invert, 10%);
 }
 
 .navigation li div {
@@ -68,10 +81,13 @@ div.hamburger {
   padding: 0 20px;
   text-decoration: none;
   line-height: 40px;
-  color: $black;
+  // color: $black;
+  color: white;
 }
 
 .navigation ul {
+  background-color: $primary;
+  // position: absolute;
   display: none;
   list-style: none;
   padding: 0;
@@ -96,51 +112,70 @@ div.hamburger {
 
 @media only screen and (min-width: 800px) {
   nav {
-    button{
+    button {
       display: none;
     }
 
-    .toggle-hide{
+    .toggle-hide {
       display: inherit;
     }
 
     .top {
       height: 2em;
-      background: $primary;
     }
 
     .wrapper {
+      background: $primary;
+      height: 3em;
+      //this should put photo and list side by side
+      @include flex(row, center, center);
       position: relative;
+      top: 0;
+      left: 0;
       width: 100%;
       opacity: 1;
-
     }
 
     .hamburger div {
       display: none;
+
+    }
+
+    #logo {
+      margin: .5em;
+      padding: 1em;
+      background-color: white;
+      border-radius: 100px;
+      border: 4px solid $primary;
+      display: inherit;
+      margin-top: 3em;
+      img {
+        width: 120px;
+        border-radius: 20px;
+
+      }
     }
 
     .navigation {
-      position: absolute;
-      @include flex(row, flex-start, start);
+      @include flex(row, center, start);
       height: fit-content;
 
-      #logo {
-        display: inherit;
-        margin: 0;
-        img {
-          width: 100px;
-        }
+
+      li{
+        width: 130px;
+      }
+      ul{
+        position: absolute;
       }
     }
 
     .navigation > li {
-      margin-top: calc(4em - 40px);
+      // margin-top: calc(4em - 40px);
     }
 
     .navigation li:hover {
       align-items: center;
-      width: auto;
+      // width: auto;
     }
   }
 }

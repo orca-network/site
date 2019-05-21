@@ -4,10 +4,10 @@ export default class Subscribe extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      email: null,
-      fname: null,
-      lname: null,
-      zip: null
+      email: '',
+      fname: '',
+      lname: '',
+      zip: ''
     }
   }
   render() {
@@ -30,11 +30,11 @@ export default class Subscribe extends Component {
                 <span class="asterisk">*</span> indicates required
               </div>
               <div class="mc-field-group">
-                <label for="MERGE0">Email Address * </label>
+                <label htmlfor="MERGE0">Email Address * </label>
 
                 <input
                   type="email"
-                  autocapitalize="off"
+                  autoCapitalize="off"
                   autocorrect="off"
                   name="MERGE0"
                   id="MERGE0"
@@ -45,7 +45,7 @@ export default class Subscribe extends Component {
                   }}
                 />
               </div>
-              <label for="MERGE1">First Name</label>
+              <label htmlfor="MERGE1">First Name</label>
               <div class="field-group">
                 <input
                   type="text"
@@ -60,7 +60,7 @@ export default class Subscribe extends Component {
                 />
               </div>
               <div class="mc-field-group">
-                <label for="MERGE2">Last Name</label>
+                <label htmlfor="MERGE2">Last Name</label>
                 <div class="field-group">
                   <input
                     type="text"
@@ -75,7 +75,7 @@ export default class Subscribe extends Component {
                 </div>
               </div>
               <div class="mc-field-group">
-                <label for="MERGE3">
+                <label htmlfor="MERGE3">
                   Zip Code <span class="req asterisk">*</span>
                 </label>
                 <div class="field-group">
@@ -114,7 +114,7 @@ export default class Subscribe extends Component {
                 <input
                   type="text"
                   name="b_f02e0e165f9380ffceaa5c058_e7d3644021"
-                  tabindex="-1"
+                  tabIndex="-1"
                   value=""
                 />
               </div>

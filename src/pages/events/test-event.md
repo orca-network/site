@@ -4,7 +4,7 @@ templateKey: events
 title: Event
 path: "/events/test-event"
 subtitle: new event
-date: 1999-12-31 11:59:59 -0800
+date: August 20th, 2019
 location: Seattle 
 image: /assets/cover-image.png
 rating: 1

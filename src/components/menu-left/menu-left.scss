@@ -17,11 +17,11 @@ div.menu-left {
   div.menu-left {
     @include flex(row, space-between, space-between);
 
-    margin-top: 3em;
-    ul {
+    margin-top: 5em;
+    ul:first-of-type{
       display: initial;
       margin: 0em 1em;
-      li {
+      > li {
         white-space: nowrap;
         margin: 0em 1em 1em 1em;
         a {

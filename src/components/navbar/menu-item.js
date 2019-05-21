@@ -6,7 +6,6 @@ import { When } from "../conditional/conditional.js"
 //each main link should map through
 
 const MenuItem = props => {
-  console.log("props from menu", props)
   return (
     <li>
       <Link to={props.link.main.link}>{props.link.main.title}</Link>{" "}

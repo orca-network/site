@@ -1,5 +1,5 @@
 @import "./reset.css";
-@import url('https://fonts.googleapis.com/css?family=Heebo:300,400|Playfair+Display');
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,400|Playfair+Display");
 @import "./variables.scss";
 @import "./mixins";
 @import "../navbar/navbar.scss";
@@ -17,27 +17,51 @@
 @import "./all.sass";
 
 body * {
-    font-family: 'Heebo', sans-serif;
-    font-weight: 400;
-    // font-family: 'Playfair Display', serif;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  // font-family: 'Playfair Display', serif;
 }
 
-
-h2{
-    font-weight: bold;
-    font-size: 2em;
+h2 {
+  font-weight: bold;
+  font-size: 2em;
 }
 
-h3, h4{
-    font-weight: bold;
-    font-size: 1.2em;
+h3,
+h4 {
+  font-weight: bold;
+  font-size: 1.2em;
 
-    // font-size: 2em;
+  // font-size: 2em;
 }
 
-.centerRow{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.centerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-top: 1em;
+}
+
+blockquote {
+  font-style: italic;
+  margin-left: 2em;
+  p {
+    text-indent: 0em;
+  }
+}
+
+section {
+  border-bottom: 2px solid black;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: blue;
 }

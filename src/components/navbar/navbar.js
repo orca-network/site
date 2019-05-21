@@ -65,15 +65,15 @@ class Navbar extends React.Component {
         {/* <If condition={this.state.width < 600}> */}
           {/* <Then> */}
             <div className={this.state.showMenu} onClick={this.nav}>
-              <ul className="navigation">
-              <li id="logo">
+              <div id="logo">
                   <Link to="/" className="" title="Logo">
                     <img
                       src="/assets/network-logo.png"
                       alt="The Orca Network Logo"
                     />
                   </Link>{" "}
-                </li>
+                </div>
+              <ul className="navigation">
                 {links.map((link, i) => {
                   return <MenuItem link={link} showSub={true} key={i} />
                 })}
