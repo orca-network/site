@@ -21,6 +21,7 @@ const TemplateWrapper = ({ children }) => (
     `}
     render={data => (
       <div className="layout">
+      {/* TODO: add the script tag for the donorbox plugin here with <script></script> */}
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>

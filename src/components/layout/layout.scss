@@ -1,7 +1,7 @@
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   > section {
     flex: 1;
     @include flex(column, center, center);
@@ -21,7 +21,7 @@
     // height: 100vh;
     > section {
       //   flex: 1;
-      margin-top: 7em;
+      margin-top: 0px;
     //   @include flex(column, center, center);
       > section.content {
         display: flex;

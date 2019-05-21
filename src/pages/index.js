@@ -15,11 +15,12 @@ import "../components/styles/carousel.scss"
 import Img from "gatsby-image"
 
 let description =
-  "Orca Network is a 502(c)(3) non-profit organization dedicated to rasing awareness of the whales of the Pacific Northwest, an the importance of providing them healthy and safe habitats."
+  "Orca Network is a 502(c)(3) non-profit organization dedicated to rasing awareness of the whales of the Pacific Northwest, and the importance of providing them healthy and safe habitats."
 
 export default ({ data }) => {
   // console.log("about orca results", data.AboutOrcasMain)
   console.log("image", data.coverImg)
+  let events = data.events.edges;
   return (
     <Layout>
       {/* <Carousel /> */}
@@ -35,14 +36,19 @@ export default ({ data }) => {
         </a>
       </Banner>
       <section style={{ width: "100%" }}>
-        <InfoCard
-          title="Movie"
-          subtitle="The Orca Network"
-          date="1/1/1"
-          location={data.events.edges[0].node.frontmatter.location}
-          description="A movie about orcas by Orca Network"
-          img={null}
-        />
+      {events.map(event=>{
+        return (
+          <Link to={event.node.frontmatter.path}>
+          <InfoCard 
+          title={event.node.frontmatter.title}
+          location={event.node.frontmatter.locatoin}
+          date={event.node.frontmatter.date}
+          
+          />
+          </Link>
+        )
+      })}
+     
       </section>
 
       <section className="content">
@@ -99,6 +105,7 @@ export const query = graphql`
         node {
           id
           frontmatter {
+            path
             location
             date
             title

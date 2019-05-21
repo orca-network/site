@@ -33,20 +33,22 @@ const AccordionList = props => {
                 </h3>
               </AccordionItemTitle>
               <AccordionItemBody>
-                <div>
-                  <p style={{overflow: "hidden", padding: "1em"}}>
+                <div className="accordion-body">
+                  <p style={{ overflow: "hidden", padding: "1em" }}>
                     {" "}
-                    {image ?
-                    <img
-                      src={image}
-                      style={{ display: "inline !important", float: "left", width:"300px", paddingRight: "1em" }}
-                    /> :
-                    null
-                    }
+                    {image ? (
+                      <img
+                        src={image}
+                        style={{
+                          display: "inline !important",
+                          float: "left",
+                          width: "300px",
+                          paddingRight: "1em",
+                        }}
+                      />
+                    ) : null}
                     {/* TODO: find another way beside the below to set html*/}
-
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
-
+                      <div id="accordion-content" dangerouslySetInnerHTML={{ __html: html }} />
                     {/* {rawMarkdownBody} */}
                   </p>
                 </div>
