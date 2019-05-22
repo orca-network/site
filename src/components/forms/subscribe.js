@@ -17,14 +17,6 @@ export default class Subscribe extends Component {
   submitForm = e => {
     e.preventDefault()
     if (this.state.message === "white" && this.state.bot === "") {
-      //   superagent
-      //     .post("http://localhost:2000/sub")
-      //     .send(this.state)
-      //     .then(res => {
-      //       console.log("do i get a response", res)
-      //       return <p>res.statusText</p>
-      //     })
-      //     .catch(error => {})
       axios
         .post("http://localhost:2000/sub", this.state)
         .then(res => {
