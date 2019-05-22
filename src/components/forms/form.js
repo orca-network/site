@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import axios from 'axios'
 
 export default class form extends Component {
   constructor(props) {
@@ -10,21 +11,15 @@ export default class form extends Component {
   }
 
   handleFormSubmit = e => {
-    e.preventDefault()
-    console.log("submitted", this.state)
-    // fetch('http://example.com',{
-    //     method: "POST",
-    //     body: JSON.stringify(userData),
-    //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //     },
-    //   }).then(response => {
-    //     response.json().then(data =>{
-    //       console.log("Successful" + data);
-    //     })
-    // })
-    // .catch(error => console.error('unsuccessful post'));
+    e.preventDefault();
+    let url = `https://script.google.com/macros/s/AKfycbyNLPGNDB-bO5kxpYf3CnsYQLCHANjhVVRn_AsnX0YO-MZ9n-k/exec?location=Seattle`;
+
+    axios.get(url, JSON.stringify(this.state))
+    .then(data =>{
+        console.log(data);
+    })
+    .catch(error => console.log('err ', error));
+
     this.handleClearForm()
   }
 
@@ -48,10 +43,11 @@ export default class form extends Component {
     return (
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>
-            <legend>Report a Sighting</legend>
+          <legend>Report a Sighting</legend>
           <label>
             Location:
             <input
+                name="location"
               type="text"
               value={this.state.location}
               onChange={this.handleLocation}
@@ -60,7 +56,8 @@ export default class form extends Component {
           <label>
             Description:
             <textarea
-              type="text-area"
+            name="location"
+            type="text-area"
               value={this.state.description}
               onChange={this.handleDescription}
             />

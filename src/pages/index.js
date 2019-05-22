@@ -34,6 +34,12 @@ export default ({ data }) => {
         <a to="/" class="button is-warning is-normal is-rounded">
           Support Orca Network
         </a>
+        <a class="button is-warning is-normal is-rounded">
+        <Link to="/about/subscribe">
+          Subscribe
+        </Link>
+        </a>
+      
       </Banner>
       <section style={{ width: "100%" }}>
       {events.map(event=>{
@@ -79,7 +85,6 @@ export default ({ data }) => {
         </div>
 
       </section>
-        <Subscribe/>
     </Layout>
   )
 }

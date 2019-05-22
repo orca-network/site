@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import axios from "axios"
+import superagent from "superagent"
 
 export default class Subscribe extends Component {
   constructor(props) {
@@ -9,38 +9,24 @@ export default class Subscribe extends Component {
       fname: "",
       lname: "",
       zip: "",
-      message: "",
-      bot: "",
     }
   }
 
-  submitForm = e => {
-    e.preventDefault()
-    if (this.state.message === "white" && this.state.bot === "") {
-      //   superagent
-      //     .post("http://localhost:2000/sub")
-      //     .send(this.state)
-      //     .then(res => {
-      //       console.log("do i get a response", res)
-      //       return <p>res.statusText</p>
-      //     })
-      //     .catch(error => {})
-      axios
-        .post("http://localhost:2000/sub", this.state)
-        .then(res => {
-          console.log("do i get a response", res)
-          return <p>res.statusText</p>
-        })
-        .catch(error => {})
-    }
+  submitForm = () => {
+    console.log("amworking to submit a form")
+    superagent.post("https://localhost:2000/subscribe")
+    .send(this.state)
+    .catch(error =>{
+        return 'There was an error with the form';
+    });
   }
 
   render() {
     return (
       <div id="mc_embed_signup">
         <form
-          onSubmit={e => this.submitForm(e)}
-          action="https://localhost:2000/sub"
+          onSubmit={() => this.submitForm()}
+          action="https://gmail.us20.list-manage.com/subscribe/post"
           method="POST"
         >
           <input type="hidden" name="u" value="f02e0e165f9380ffceaa5c058" />
@@ -52,8 +38,11 @@ export default class Subscribe extends Component {
           <fieldset>
             <legend>Subscribe</legend>
             <div id="mc_embed_signup_scroll">
+              <div class="indicates-required">
+                <span class="asterisk">*</span> indicates required
+              </div>
               <div class="mc-field-group">
-                <label htmlfor="MERGE0">Email Address</label>
+                <label htmlfor="MERGE0">Email Address * </label>
 
                 <input
                   type="email"
@@ -98,9 +87,10 @@ export default class Subscribe extends Component {
                   />
                 </div>
               </div>
-
               <div class="mc-field-group">
-                <label htmlfor="MERGE3">Zip Code</label>
+                <label htmlfor="MERGE3">
+                  Zip Code <span class="req asterisk">*</span>
+                </label>
                 <div class="field-group">
                   <input
                     type="text"
@@ -110,22 +100,6 @@ export default class Subscribe extends Component {
                     value={this.state.zip}
                     onChange={e => {
                       this.setState({ zip: e.target.value })
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div class="mc-field-group">
-                <label htmlfor="check">Orcas are black and _____</label>
-                <div class="field-group">
-                  <input
-                    type="text"
-                    name="check"
-                    id="check"
-                    size="25"
-                    value={this.state.message}
-                    onChange={e => {
-                      this.setState({ message: e.target.value })
                     }}
                   />
                 </div>
@@ -154,10 +128,7 @@ export default class Subscribe extends Component {
                   type="text"
                   name="b_f02e0e165f9380ffceaa5c058_e7d3644021"
                   tabIndex="-1"
-                  value={this.state.bot}
-                  onChange={e => {
-                    this.setState({ bot: e.target.value })
-                  }}
+                  value=""
                 />
               </div>
               <div class="clear">
