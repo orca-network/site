@@ -5,6 +5,11 @@ import AccordionList from "../../../components/accordion/accordion-list.js"
 import FeatureCard from "../../../components/feature-card/feature-card.js"
 import LeftMenu from "../../../components/menu-left/left-menu.js"
 
+//TODO: make a twitter component to show recent tweets related to orcas 
+
+
+
+
 const Resource = props => {
   const posts = props.data.resourcePosts.edges
   const featured = props.data.resourceFeature.edges[0].node
@@ -23,6 +28,7 @@ const Resource = props => {
           image={featured.frontmatter.image}
 
         />
+        <a className="twitter-timeline" font-size="10px" data-width="500" data-height="400" href="https://twitter.com/orcanetwork?ref_src=twsrc%5Etfw">Tweets by Orca Network</a>
         <AccordionList posts={posts} />
       </LeftMenu>
     </Layout>

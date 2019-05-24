@@ -3,7 +3,7 @@ layout: blog
 templateKey: post
 title: "Keiko"
 date: 1999-12-31 11:59:59 -0800
-image: /assets/profile-distance.jpg
+image: /assets/cover-image.png
 rating: 5
 ---
 

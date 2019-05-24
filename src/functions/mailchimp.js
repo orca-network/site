@@ -1,7 +1,6 @@
 // import superagent from "superagent"
 
 // const root = `https://us20.api.mailchimp.com/3.0/lists/`
-// const mailchimpApiKey = `627561950e7fec543e10fe91ffa5e0b6-us20`
 // const listUniqueId = `e7d3644021`
 // // console.log('API KEY', process.env.MAIL_CHIMP);
 

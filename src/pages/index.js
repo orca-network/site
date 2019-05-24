@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 import InfoCard from "../components/card/info-card.js"
 import Card from "../components/card/card.js"
 import Banner from "../components/banner/banner.js"
-import Subscribe from "../components/forms/subscribe.js";
+import Subscribe from "../components/forms/subscribe.js"
 
 import Carousel from "../components/carousel/carousel.js"
 import "../components/styles/carousel.scss"
@@ -20,7 +20,7 @@ let description =
 export default ({ data }) => {
   // console.log("about orca results", data.AboutOrcasMain)
   console.log("image", data.coverImg)
-  let events = data.events.edges;
+  let events = data.events.edges
   return (
     <Layout>
       {/* <Carousel /> */}
@@ -31,31 +31,28 @@ export default ({ data }) => {
 
       <Banner title="Orca Network" sub={description}>
         {/* add the button here */}
-        <a to="/" class="button is-warning is-normal is-rounded">
+        {/* <a to="/" class="button is-warning is-normal is-rounded">
           Support Orca Network
-        </a>
-        <a class="button is-warning is-normal is-rounded">
-        <Link to="/about/subscribe">
-          Subscribe
-        </Link>
-        </a>
-      
+        </a> */}
+          <Link className="support-button" to="/about/support">Support Orca Network</Link>
       </Banner>
       <section style={{ width: "100%" }}>
-      {events.map(event=>{
-        return (
-          <Link to={event.node.frontmatter.path}>
-          <InfoCard 
-          title={event.node.frontmatter.title}
-          location={event.node.frontmatter.locatoin}
-          date={event.node.frontmatter.date}
-          
-          />
-          </Link>
-        )
-      })}
-     
+        {events.map(event => {
+          return (
+            <Link to={event.node.frontmatter.path}>
+              <InfoCard
+                title={event.node.frontmatter.title}
+                location={event.node.frontmatter.locatoin}
+                date={event.node.frontmatter.date}
+              />
+            </Link>
+          )
+        })}
       </section>
+
+      {/* twitter */}
+      <a className="twitter-timeline" font-size="10px" data-width="400" data-height="400" href="https://twitter.com/orcanetwork?ref_src=twsrc%5Etfw">Tweets by Orca Network</a>
+
 
       <section className="content">
         <div class="column is-one-quarter">
@@ -79,11 +76,10 @@ export default ({ data }) => {
         </div>
         <div class="column is-one-quarter">
           <Card
-            text="The Orca Sighing Network utilizes a variety of rescources to provide reports of Orca sightins in puget Sound."
+            text="The Orca Sighting Network utilizes a variety of rescources to provide reports of Orca sightings in puget Sound."
             img="assets/whale-sighting-logo.png"
           />
         </div>
-
       </section>
     </Layout>
   )

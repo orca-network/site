@@ -29,6 +29,7 @@ const TemplateWrapper = ({ children }) => (
             name="description"
             content={data.site.siteMetadata.description}
           />
+          <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <meta name="theme-color" content="#fff" />
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
