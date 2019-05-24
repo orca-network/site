@@ -1,10 +1,8 @@
 ---
-layout: blog
 templateKey: post
 title: A73 Springer
-date: 1999-12-31 11:59:59 -0800
-image: /assets/cover-image.png
-rating: 5
+date: 2019-05-24T18:59:59.000Z
+image: /assets/springer-joseph-alicea.png
 ---
 <div align="justify">
 
@@ -376,3 +374,4 @@ Dr Lance Barrett-Lennard, Vancouver Aquarium marine mammal research scientist, s
 Barrett-Lennard said at about the time the call came in Springer became very excited and began to breach and call very loudly.
 
 </div>
+
