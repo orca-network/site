@@ -63,37 +63,33 @@ class Navbar extends React.Component {
     return (
       <nav>
         {/* <If condition={this.state.width < 600}> */}
-          {/* <Then> */}
-            <div className={this.state.showMenu} onClick={this.nav}>
-              <div id="logo">
-                  <Link to="/" className="" title="Logo">
-                    <img
-                      src="/assets/network-logo.png"
-                      alt="The Orca Network Logo"
-                    />
-                  </Link>{" "}
-                </div>
-              <ul className="navigation">
-                {links.map((link, i) => {
-                  return <MenuItem link={link} showSub={true} key={i} />
-                })}
-              </ul>
-            </div>
-            <button
-              className={this.state.hamburgerClass}
-              onClick={this.activeHamburger}
-              type="button"
-            >
-              <span className="hamburger-box">
-                <span className="hamburger-inner" />
-              </span>
-            </button>
-          {/* </Then> */}
-          {/* <Else> */}
-            {/* <div className="top" /> */}
-            
+        {/* <Then> */}
+        <div className={this.state.showMenu} onClick={this.nav}>
+          <div id="logo">
+            <Link to="/" className="" title="Logo">
+              <img src="/assets/network-logo.png" alt="The Orca Network Logo" />
+            </Link>{" "}
+          </div>
+          <ul className="navigation">
+            {links.map((link, i) => {
+              return <MenuItem link={link} showSub={true} key={i} />
+            })}
+          </ul>
+        </div>
+        <button
+          className={this.state.hamburgerClass}
+          onClick={this.activeHamburger}
+          type="button"
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner" />
+          </span>
+        </button>
+        {/* </Then> */}
+        {/* <Else> */}
+        {/* <div className="top" /> */}
 
-            {/* <div className="wrapper">
+        {/* <div className="wrapper">
               <ul className="navigation">
                 <li id="logo">
                   <Link to="/" className="" title="Logo">
@@ -109,13 +105,11 @@ class Navbar extends React.Component {
               </ul>
             </div> */}
 
-
-          {/* </Else> */}
+        {/* </Else> */}
         {/* </If> */}
       </nav>
     )
   }
 }
-
 
 export default Navbar

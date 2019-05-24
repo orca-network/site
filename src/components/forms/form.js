@@ -11,10 +11,19 @@ export default class form extends Component {
   }
 
   handleFormSubmit = e => {
-    e.preventDefault();
-    let url = `https://script.google.com/macros/s/AKfycbyNLPGNDB-bO5kxpYf3CnsYQLCHANjhVVRn_AsnX0YO-MZ9n-k/exec?location=Seattle`;
+    // e.preventDefault();
+    // let url = `https://script.google.com/macros/s/AKfycbyNLPGNDB-bO5kxpYf3CnsYQLCHANjhVVRn_AsnX0YO-MZ9n-k/exec?location=Seattle`;
 
-    axios.get(url, JSON.stringify(this.state))
+    // axios.get(url, JSON.stringify(this.state))
+    // .then(data =>{
+    //     console.log(data);
+    // })
+    // .catch(error => console.log('err ', error));
+
+        e.preventDefault();
+    let url = "http://localhost:2000/sheets";
+
+    axios.post(url, this.state)
     .then(data =>{
         console.log(data);
     })

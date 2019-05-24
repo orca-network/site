@@ -10,8 +10,6 @@ const NaturalHistory = props => {
   const featured = props.data.historyFeature.edges[0].node
   const menu = props.data.menu.edges
 
-  console.log("alias query", posts, featured)
-
   return (
     <Layout>
       <LeftMenu
@@ -57,7 +55,7 @@ export const query = graphql`
     ) {
       ...menuFrontmatter
     }
-    
+
   }
 `
 

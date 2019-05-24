@@ -1,16 +1,17 @@
 .hero-1 {
-    width: 100%;
-    // background-color: $primary;
-    @include flex(column, center, center);
+  width: 100%;
+  background-color: $primary;
+  @include flex(column, center, center);
   div {
     @include flex(column, center, center);
-    width: 60%;
+    width: 80%;
+    p{
+      color: $white;
+    }
     > * {
-        // color: #f7f2f2;
-        color: $black;
-        text-align: center;
-        margin: .5em;
+      color: $white;
+      text-align: center;
+      margin: 5px;
     }
   }
-
 }

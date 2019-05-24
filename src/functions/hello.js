@@ -3,7 +3,7 @@ import axios from "axios"
 
 exports.handler = (event, context, callback) => {
   axios
-    .get("https://any:627561950e7fec543e10fe91ffa5e0b6-us20@us20.api.mailchimp.com/3.0/lists/e7d3644021/members")
+    .get(`https://any:${process.env.MAILCHIMP}0@us20.api.mailchimp.com/3.0/lists/e7d3644021/members`)
     .then(res => {
       // Do something with successful response
       callback(null,{

@@ -42,7 +42,7 @@ export default class Subscribe extends Component {
           name="mc-embedded-subscribe-form" class="validate" target="_blank"
           novalidate > */}
           <fieldset>
-            <legend>Subscribe</legend>
+            <legend>Subscribe to Our Newsletter</legend>
             <div id="mc_embed_signup_scroll">
               <div class="mc-field-group">
                 <label htmlfor="MERGE0">Email Address</label>

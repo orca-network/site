@@ -54,7 +54,7 @@ blockquote {
   }
 }
 
-section {
+.accordion-container section {
   border-bottom: 2px solid black;
 }
 
@@ -64,4 +64,10 @@ em {
 
 a {
   color: blue;
+}
+
+.support-button{
+  padding: .5em;
+  background-color: $orange;
+  border-radius: 20px;
 }
