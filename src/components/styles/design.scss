@@ -56,6 +56,9 @@ blockquote {
 
 .accordion-container section {
   border-bottom: 2px solid black;
+  img{
+    max-width: 300px;
+  }
 }
 
 em {

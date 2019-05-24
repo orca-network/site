@@ -12,3 +12,6 @@ https://donorbox.org/dashboard
 
 ### Configure twitter 
 * See gatsby-browser.js
+
+### Transferring data from web page:
+`curl http://www.orcanetwork.org/Main/index.php?categories_file=Springer -o springer.html`
