@@ -9,3 +9,6 @@
 (hamburgers)[https://jonsuh.com/hamburgers/#sass]
 
 https://donorbox.org/dashboard
+
+### Configure twitter 
+* See gatsby-browser.js
